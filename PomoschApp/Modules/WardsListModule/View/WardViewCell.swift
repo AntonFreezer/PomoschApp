@@ -19,6 +19,7 @@ final class WardViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
+        imageView.showLoading(style: .large, color: .darkGray)
         return imageView
     }()
     
@@ -96,12 +97,15 @@ final class WardViewCell: UICollectionViewCell {
                     let image = UIImage(data: data)?
                         .downsampleImage(for: self?.imageView.bounds.size ?? CGSize())
                     self?.imageView.image = image
+                    self?.imageView.stopLoading()
                 }
             case .failure(let error):
                 print(String(describing: error))
                 break
             }
         }
+        
+        
     }
 }
 

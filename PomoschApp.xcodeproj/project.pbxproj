@@ -27,7 +27,8 @@
 		966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3542B5979FC00B337E9 /* WardViewCell.swift */; };
 		966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3562B5985C600B337E9 /* WardCellViewModel.swift */; };
 		966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3592B5988F000B337E9 /* ImageManager.swift */; };
-		966DC35E2B59A3C000B337E9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC35D2B59A3C000B337E9 /* UIImage+.swift */; };
+		966DC35E2B59A3C000B337E9 /* UIImage+Downsample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */; };
+		966DC3622B59BA4800B337E9 /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3612B59BA4800B337E9 /* UIView+Loading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +54,8 @@
 		966DC3542B5979FC00B337E9 /* WardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardViewCell.swift; sourceTree = "<group>"; };
 		966DC3562B5985C600B337E9 /* WardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardCellViewModel.swift; sourceTree = "<group>"; };
 		966DC3592B5988F000B337E9 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		966DC35D2B59A3C000B337E9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Downsample.swift"; sourceTree = "<group>"; };
+		966DC3612B59BA4800B337E9 /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +263,8 @@
 		966DC35C2B59A3A700B337E9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				966DC35D2B59A3C000B337E9 /* UIImage+.swift */,
+				966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */,
+				966DC3612B59BA4800B337E9 /* UIView+Loading.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -349,10 +352,11 @@
 				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
 				966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */,
 				966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */,
-				966DC35E2B59A3C000B337E9 /* UIImage+.swift in Sources */,
+				966DC35E2B59A3C000B337E9 /* UIImage+Downsample.swift in Sources */,
 				966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */,
 				966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */,
 				966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */,
+				966DC3622B59BA4800B337E9 /* UIView+Loading.swift in Sources */,
 				966DC3462B596A3700B337E9 /* ManifestVC.swift in Sources */,
 				965108172B59318A00572D4B /* AppDelegate.swift in Sources */,
 				966DC3432B5969B700B337E9 /* WardDetailsVC.swift in Sources */,
