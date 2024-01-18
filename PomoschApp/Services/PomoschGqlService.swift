@@ -9,7 +9,7 @@ import Foundation
 import Apollo
 
 final class PomoschGqlService {
-    static let common = PomoschGqlService()
+    static let shared = PomoschGqlService()
     
     private(set) var apollo = ApolloClient(url: R.URLs.pomoschGraphQlEndpoint)
     

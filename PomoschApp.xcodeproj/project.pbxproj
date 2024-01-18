@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		965108172B59318A00572D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108162B59318A00572D4B /* AppDelegate.swift */; };
 		965108192B59318A00572D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108182B59318A00572D4B /* SceneDelegate.swift */; };
-		9651081B2B59318A00572D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651081A2B59318A00572D4B /* ViewController.swift */; };
 		965108202B59318B00572D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9651081F2B59318B00572D4B /* Assets.xcassets */; };
 		965108232B59318B00572D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965108212B59318B00572D4B /* LaunchScreen.storyboard */; };
 		9651082C2B5933A600572D4B /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9651082B2B5933A600572D4B /* Apollo */; };
@@ -17,13 +16,23 @@
 		966DC3322B5961A500B337E9 /* PomoschAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 966DC3312B5961A500B337E9 /* PomoschAPI */; };
 		966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3392B59657700B337E9 /* PomoschGqlService.swift */; };
 		966DC33C2B59660300B337E9 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC33B2B59660300B337E9 /* R.swift */; };
+		966DC33F2B59694A00B337E9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC33E2B59694A00B337E9 /* TabBarController.swift */; };
+		966DC3412B59698A00B337E9 /* WardsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3402B59698A00B337E9 /* WardsListVC.swift */; };
+		966DC3432B5969B700B337E9 /* WardDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3422B5969B700B337E9 /* WardDetailsVC.swift */; };
+		966DC3462B596A3700B337E9 /* ManifestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3452B596A3700B337E9 /* ManifestVC.swift */; };
+		966DC34A2B59728000B337E9 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3492B59728000B337E9 /* GenericViewController.swift */; };
+		966DC34E2B59746C00B337E9 /* WardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC34D2B59746C00B337E9 /* WardsListView.swift */; };
+		966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3502B5975C600B337E9 /* ModelTypes.swift */; };
+		966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3522B59781400B337E9 /* WardsListViewModel.swift */; };
+		966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3542B5979FC00B337E9 /* WardViewCell.swift */; };
+		966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3562B5985C600B337E9 /* WardCellViewModel.swift */; };
+		966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3592B5988F000B337E9 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		965108132B59318A00572D4B /* PomoschApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoschApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965108162B59318A00572D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		965108182B59318A00572D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9651081A2B59318A00572D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9651081F2B59318B00572D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		965108222B59318B00572D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		965108242B59318B00572D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +41,17 @@
 		966DC32F2B59614300B337E9 /* PomoschAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PomoschAPI; sourceTree = "<group>"; };
 		966DC3392B59657700B337E9 /* PomoschGqlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoschGqlService.swift; sourceTree = "<group>"; };
 		966DC33B2B59660300B337E9 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		966DC33E2B59694A00B337E9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		966DC3402B59698A00B337E9 /* WardsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardsListVC.swift; sourceTree = "<group>"; };
+		966DC3422B5969B700B337E9 /* WardDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardDetailsVC.swift; sourceTree = "<group>"; };
+		966DC3452B596A3700B337E9 /* ManifestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestVC.swift; sourceTree = "<group>"; };
+		966DC3492B59728000B337E9 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		966DC34D2B59746C00B337E9 /* WardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardsListView.swift; sourceTree = "<group>"; };
+		966DC3502B5975C600B337E9 /* ModelTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTypes.swift; sourceTree = "<group>"; };
+		966DC3522B59781400B337E9 /* WardsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardsListViewModel.swift; sourceTree = "<group>"; };
+		966DC3542B5979FC00B337E9 /* WardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardViewCell.swift; sourceTree = "<group>"; };
+		966DC3562B5985C600B337E9 /* WardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardCellViewModel.swift; sourceTree = "<group>"; };
+		966DC3592B5988F000B337E9 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,19 +91,22 @@
 			children = (
 				966DC3352B5962F200B337E9 /* Modules */,
 				966DC3342B5962E300B337E9 /* Services */,
-				966DC32A2B5946AE00B337E9 /* graphql */,
-				966DC3332B5962C800B337E9 /* Resources */,
+				966DC3582B5988DA00B337E9 /* Managers */,
+				966DC32A2B5946AE00B337E9 /* GraphQL */,
+				966DC33D2B59678100B337E9 /* Resources */,
+				966DC3472B59721A00B337E9 /* Helpers */,
+				966DC3332B5962C800B337E9 /* Application */,
 			);
 			path = PomoschApp;
 			sourceTree = "<group>";
 		};
-		966DC32A2B5946AE00B337E9 /* graphql */ = {
+		966DC32A2B5946AE00B337E9 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
 				966DC32B2B5946AE00B337E9 /* schema.graphqls */,
 				966DC32D2B5960CA00B337E9 /* paginatedWardsQuery.graphql */,
 			);
-			path = graphql;
+			path = GraphQL;
 			sourceTree = SOURCE_ROOT;
 		};
 		966DC32E2B59614300B337E9 /* Packages */ = {
@@ -101,16 +124,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		966DC3332B5962C800B337E9 /* Resources */ = {
+		966DC3332B5962C800B337E9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				965108162B59318A00572D4B /* AppDelegate.swift */,
 				965108182B59318A00572D4B /* SceneDelegate.swift */,
-				9651081F2B59318B00572D4B /* Assets.xcassets */,
 				965108212B59318B00572D4B /* LaunchScreen.storyboard */,
-				966DC33B2B59660300B337E9 /* R.swift */,
 			);
-			path = Resources;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		966DC3342B5962E300B337E9 /* Services */ = {
@@ -127,6 +148,7 @@
 				966DC3362B59630500B337E9 /* Core */,
 				966DC3372B59631C00B337E9 /* WardsListModule */,
 				966DC3382B59632C00B337E9 /* WardDetailsModule */,
+				966DC3442B5969FA00B337E9 /* ManifestModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -134,7 +156,7 @@
 		966DC3362B59630500B337E9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9651081A2B59318A00572D4B /* ViewController.swift */,
+				966DC33E2B59694A00B337E9 /* TabBarController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -142,6 +164,8 @@
 		966DC3372B59631C00B337E9 /* WardsListModule */ = {
 			isa = PBXGroup;
 			children = (
+				966DC34B2B5972D000B337E9 /* View */,
+				966DC34C2B5972DA00B337E9 /* ViewModel */,
 			);
 			path = WardsListModule;
 			sourceTree = "<group>";
@@ -149,8 +173,78 @@
 		966DC3382B59632C00B337E9 /* WardDetailsModule */ = {
 			isa = PBXGroup;
 			children = (
+				966DC3422B5969B700B337E9 /* WardDetailsVC.swift */,
 			);
 			path = WardDetailsModule;
+			sourceTree = "<group>";
+		};
+		966DC33D2B59678100B337E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9651081F2B59318B00572D4B /* Assets.xcassets */,
+				966DC33B2B59660300B337E9 /* R.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		966DC3442B5969FA00B337E9 /* ManifestModule */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3452B596A3700B337E9 /* ManifestVC.swift */,
+			);
+			path = ManifestModule;
+			sourceTree = "<group>";
+		};
+		966DC3472B59721A00B337E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				966DC34F2B59759E00B337E9 /* PomoschAPI */,
+				966DC3482B59724700B337E9 /* UI */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		966DC3482B59724700B337E9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3492B59728000B337E9 /* GenericViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		966DC34B2B5972D000B337E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3402B59698A00B337E9 /* WardsListVC.swift */,
+				966DC34D2B59746C00B337E9 /* WardsListView.swift */,
+				966DC3542B5979FC00B337E9 /* WardViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		966DC34C2B5972DA00B337E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3522B59781400B337E9 /* WardsListViewModel.swift */,
+				966DC3562B5985C600B337E9 /* WardCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		966DC34F2B59759E00B337E9 /* PomoschAPI */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3502B5975C600B337E9 /* ModelTypes.swift */,
+			);
+			path = PomoschAPI;
+			sourceTree = "<group>";
+		};
+		966DC3582B5988DA00B337E9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3592B5988F000B337E9 /* ImageManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966DC34E2B59746C00B337E9 /* WardsListView.swift in Sources */,
+				966DC34A2B59728000B337E9 /* GenericViewController.swift in Sources */,
 				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
-				9651081B2B59318A00572D4B /* ViewController.swift in Sources */,
+				966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */,
+				966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */,
+				966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */,
+				966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */,
+				966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */,
+				966DC3462B596A3700B337E9 /* ManifestVC.swift in Sources */,
 				965108172B59318A00572D4B /* AppDelegate.swift in Sources */,
+				966DC3432B5969B700B337E9 /* WardDetailsVC.swift in Sources */,
+				966DC3412B59698A00B337E9 /* WardsListVC.swift in Sources */,
+				966DC33F2B59694A00B337E9 /* TabBarController.swift in Sources */,
 				966DC33C2B59660300B337E9 /* R.swift in Sources */,
 				965108192B59318A00572D4B /* SceneDelegate.swift in Sources */,
 			);
