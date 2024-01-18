@@ -39,7 +39,7 @@ final class WardsListViewModel: NSObject {
                     
     //MARK: Network
     public func fetchWards() {
-        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: "MA==")) { [weak self] result in
+        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: nil)) { [weak self] result in
             switch result {
                 
             case .failure(let error):

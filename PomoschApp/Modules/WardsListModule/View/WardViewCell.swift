@@ -25,8 +25,9 @@ final class WardViewCell: UICollectionViewCell {
     private let displayNameLabel: UILabel = {
         let label = UILabel()
         
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .gray
+        label.textColor = .black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -48,7 +49,7 @@ final class WardViewCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .lightGray
         contentView.addSubview(imageView)
         contentView.addSubview(displayNameLabel)
     }
@@ -92,7 +93,8 @@ final class WardViewCell: UICollectionViewCell {
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
-                    let image = UIImage(data: data)
+                    let image = UIImage(data: data)?
+                        .downsampleImage(for: self?.imageView.bounds.size ?? CGSize())
                     self?.imageView.image = image
                 }
             case .failure(let error):

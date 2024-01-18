@@ -14,7 +14,6 @@ final class ImageManager {
     
     private init() {}
     
-    
     /// This method either downloads or retrieves image by provided URL via URLSession data task and stores/retrieves the result in/from the private cache of the singleton class
     /// - Parameters:
     ///   - url: Image URL
@@ -37,5 +36,7 @@ final class ImageManager {
         }
         task.resume()
     }
+    
+    
 }
 

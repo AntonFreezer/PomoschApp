@@ -27,6 +27,7 @@
 		966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3542B5979FC00B337E9 /* WardViewCell.swift */; };
 		966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3562B5985C600B337E9 /* WardCellViewModel.swift */; };
 		966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3592B5988F000B337E9 /* ImageManager.swift */; };
+		966DC35E2B59A3C000B337E9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC35D2B59A3C000B337E9 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		966DC3542B5979FC00B337E9 /* WardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardViewCell.swift; sourceTree = "<group>"; };
 		966DC3562B5985C600B337E9 /* WardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardCellViewModel.swift; sourceTree = "<group>"; };
 		966DC3592B5988F000B337E9 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		966DC35D2B59A3C000B337E9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				966DC33D2B59678100B337E9 /* Resources */,
 				966DC3472B59721A00B337E9 /* Helpers */,
 				966DC3332B5962C800B337E9 /* Application */,
+				966DC35B2B59A39300B337E9 /* Extensions */,
 			);
 			path = PomoschApp;
 			sourceTree = "<group>";
@@ -247,6 +250,22 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		966DC35B2B59A39300B337E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				966DC35C2B59A3A700B337E9 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		966DC35C2B59A3A700B337E9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				966DC35D2B59A3C000B337E9 /* UIImage+.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +349,7 @@
 				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
 				966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */,
 				966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */,
+				966DC35E2B59A3C000B337E9 /* UIImage+.swift in Sources */,
 				966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */,
 				966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */,
 				966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */,
