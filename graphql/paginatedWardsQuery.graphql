@@ -1,0 +1,21 @@
+query WardsPaginatedQuery($cursorAfter: String) {
+    wards(after: $cursorAfter, first: 5) {
+        edges {
+            node {
+                id
+                published
+                publicInformation {
+                    name {
+                        displayName
+                    }
+                }
+            }
+        }
+        pageInfo {
+            endCursor
+            hasNextPage
+            startCursor
+        }
+    }
+}
+

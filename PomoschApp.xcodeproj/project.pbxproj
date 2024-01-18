@@ -10,11 +10,13 @@
 		965108172B59318A00572D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108162B59318A00572D4B /* AppDelegate.swift */; };
 		965108192B59318A00572D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108182B59318A00572D4B /* SceneDelegate.swift */; };
 		9651081B2B59318A00572D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651081A2B59318A00572D4B /* ViewController.swift */; };
-		9651081E2B59318A00572D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9651081C2B59318A00572D4B /* Main.storyboard */; };
 		965108202B59318B00572D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9651081F2B59318B00572D4B /* Assets.xcassets */; };
 		965108232B59318B00572D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965108212B59318B00572D4B /* LaunchScreen.storyboard */; };
 		9651082C2B5933A600572D4B /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9651082B2B5933A600572D4B /* Apollo */; };
 		966DC32C2B5946AE00B337E9 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 966DC32B2B5946AE00B337E9 /* schema.graphqls */; };
+		966DC3322B5961A500B337E9 /* PomoschAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 966DC3312B5961A500B337E9 /* PomoschAPI */; };
+		966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3392B59657700B337E9 /* PomoschGqlService.swift */; };
+		966DC33C2B59660300B337E9 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC33B2B59660300B337E9 /* R.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +24,14 @@
 		965108162B59318A00572D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		965108182B59318A00572D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9651081A2B59318A00572D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9651081D2B59318A00572D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9651081F2B59318B00572D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		965108222B59318B00572D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		965108242B59318B00572D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966DC32B2B5946AE00B337E9 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		966DC32D2B5960CA00B337E9 /* paginatedWardsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = paginatedWardsQuery.graphql; sourceTree = "<group>"; };
+		966DC32F2B59614300B337E9 /* PomoschAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PomoschAPI; sourceTree = "<group>"; };
+		966DC3392B59657700B337E9 /* PomoschGqlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoschGqlService.swift; sourceTree = "<group>"; };
+		966DC33B2B59660300B337E9 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9651082C2B5933A600572D4B /* Apollo in Frameworks */,
+				966DC3322B5961A500B337E9 /* PomoschAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +50,11 @@
 		9651080A2B59318A00572D4B = {
 			isa = PBXGroup;
 			children = (
+				966DC32E2B59614300B337E9 /* Packages */,
 				965108152B59318A00572D4B /* PomoschApp */,
 				965108142B59318A00572D4B /* Products */,
+				966DC3302B5961A500B337E9 /* Frameworks */,
+				965108242B59318B00572D4B /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +69,10 @@
 		965108152B59318A00572D4B /* PomoschApp */ = {
 			isa = PBXGroup;
 			children = (
+				966DC3352B5962F200B337E9 /* Modules */,
+				966DC3342B5962E300B337E9 /* Services */,
 				966DC32A2B5946AE00B337E9 /* graphql */,
-				965108162B59318A00572D4B /* AppDelegate.swift */,
-				965108182B59318A00572D4B /* SceneDelegate.swift */,
-				9651081A2B59318A00572D4B /* ViewController.swift */,
-				9651081C2B59318A00572D4B /* Main.storyboard */,
-				9651081F2B59318B00572D4B /* Assets.xcassets */,
-				965108212B59318B00572D4B /* LaunchScreen.storyboard */,
-				965108242B59318B00572D4B /* Info.plist */,
+				966DC3332B5962C800B337E9 /* Resources */,
 			);
 			path = PomoschApp;
 			sourceTree = "<group>";
@@ -76,9 +81,77 @@
 			isa = PBXGroup;
 			children = (
 				966DC32B2B5946AE00B337E9 /* schema.graphqls */,
+				966DC32D2B5960CA00B337E9 /* paginatedWardsQuery.graphql */,
 			);
 			path = graphql;
 			sourceTree = SOURCE_ROOT;
+		};
+		966DC32E2B59614300B337E9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				966DC32F2B59614300B337E9 /* PomoschAPI */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		966DC3302B5961A500B337E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		966DC3332B5962C800B337E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				965108162B59318A00572D4B /* AppDelegate.swift */,
+				965108182B59318A00572D4B /* SceneDelegate.swift */,
+				9651081F2B59318B00572D4B /* Assets.xcassets */,
+				965108212B59318B00572D4B /* LaunchScreen.storyboard */,
+				966DC33B2B59660300B337E9 /* R.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		966DC3342B5962E300B337E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3392B59657700B337E9 /* PomoschGqlService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		966DC3352B5962F200B337E9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				966DC3362B59630500B337E9 /* Core */,
+				966DC3372B59631C00B337E9 /* WardsListModule */,
+				966DC3382B59632C00B337E9 /* WardDetailsModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		966DC3362B59630500B337E9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9651081A2B59318A00572D4B /* ViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		966DC3372B59631C00B337E9 /* WardsListModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WardsListModule;
+			sourceTree = "<group>";
+		};
+		966DC3382B59632C00B337E9 /* WardDetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WardDetailsModule;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -98,6 +171,7 @@
 			name = PomoschApp;
 			packageProductDependencies = (
 				9651082B2B5933A600572D4B /* Apollo */,
+				966DC3312B5961A500B337E9 /* PomoschAPI */,
 			);
 			productName = PomoschApp;
 			productReference = 965108132B59318A00572D4B /* PomoschApp.app */;
@@ -147,7 +221,6 @@
 				966DC32C2B5946AE00B337E9 /* schema.graphqls in Resources */,
 				965108232B59318B00572D4B /* LaunchScreen.storyboard in Resources */,
 				965108202B59318B00572D4B /* Assets.xcassets in Resources */,
-				9651081E2B59318A00572D4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,8 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
 				9651081B2B59318A00572D4B /* ViewController.swift in Sources */,
 				965108172B59318A00572D4B /* AppDelegate.swift in Sources */,
+				966DC33C2B59660300B337E9 /* R.swift in Sources */,
 				965108192B59318A00572D4B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,14 +242,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9651081C2B59318A00572D4B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9651081D2B59318A00572D4B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		965108212B59318B00572D4B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -312,9 +379,7 @@
 				INFOPLIST_FILE = PomoschApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,9 +405,7 @@
 				INFOPLIST_FILE = PomoschApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +458,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9651082A2B5933A600572D4B /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		966DC3312B5961A500B337E9 /* PomoschAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PomoschAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
