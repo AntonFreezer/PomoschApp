@@ -93,30 +93,8 @@ final class WardViewCell: UICollectionViewCell {
         viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let url):
-                DispatchQueue.main.async {
-                    
-                    let processor = DownsamplingImageProcessor(size: self?.imageView.bounds.size ?? CGSize())
-                    |> RoundCornerImageProcessor(cornerRadius: 20)
-                    self?.imageView.kf.indicatorType = .activity
-                    self?.imageView.kf.setImage(
-                        with: url,
-                        placeholder: UIImage(named: "placeholderImage"),
-                        options: [
-                            .processor(processor),
-                            .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(1)),
-                            .cacheOriginalImage
-                        ])
-                    {
-                        result in
-                        switch result {
-                        case .success(let value):
-                            print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                        case .failure(let error):
-                            print("Job failed: \(error.localizedDescription)")
-                        }
-                    }
-                }
+                ImageManager.shared.setImage(at: url, for: self?.imageView)
+                
             case .failure(let error):
                 print(String(describing: error))
                 break
