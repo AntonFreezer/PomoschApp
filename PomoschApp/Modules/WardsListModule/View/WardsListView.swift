@@ -72,7 +72,7 @@ final class WardsListView: UIView {
     
     private func setupViewModel() {
         viewModel.delegate = self
-        viewModel.fetchWards()
+        viewModel.fetchWardsIfExist()
     }
     
     private func setupCollectionView() {

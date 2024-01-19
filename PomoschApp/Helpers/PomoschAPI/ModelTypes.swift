@@ -9,4 +9,5 @@ import PomoschAPI
 
 struct ModelTypes {
     typealias Ward = WardsPaginatedQuery.Data.Wards.Edge
+    typealias PageInfo = WardsPaginatedQuery.Data.Wards.PageInfo
 }

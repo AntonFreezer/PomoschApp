@@ -26,7 +26,7 @@ final class WardsListViewModel: NSObject {
                 let viewModel = WardCellViewModel(
                     wardDisplayName: ward.node.publicInformation.name.displayName,
                     wardImageUrl: URL(string: ward.node.publicInformation.photo.url)
-                    )
+                )
                 
                 if !cellViewModels.contains(viewModel) {
                     cellViewModels.append(viewModel)
@@ -36,22 +36,47 @@ final class WardsListViewModel: NSObject {
     }
     
     private var cellViewModels: [WardCellViewModel] = []
-                    
+    
+    private var currentPageInfo: ModelTypes.PageInfo?
+    
     //MARK: Network
-    public func fetchWards() {
-        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: nil)) { [weak self] result in
+    public func fetchWardsIfExist() {
+        guard let currentPageInfo else {
+            self.fetchWards(from: nil)
+            return
+        }
+        
+        guard currentPageInfo.hasNextPage else {
+            return
+        }
+        
+        self.fetchWards(from: currentPageInfo.endCursor)
+    }
+    
+    private func fetchWards(from cursor: String?) {
+        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: cursor ?? nil)) { [weak self] result in
+            // guard let strongSelf = self else { return }
+            
+            self?.currentPageInfo = nil
+            
             switch result {
+                
+            case.success(let graphQLResult):
+                if let wards = graphQLResult.data?.wards {
+                    self?.currentPageInfo = wards.pageInfo
+                    self?.wards.append(contentsOf: wards.edges?.compactMap{ $0 } ?? [])
+                    
+                    DispatchQueue.main.async {
+                        self?.delegate?.didFetchWards()
+                    }
+                }
+                
+                if let errors = graphQLResult.errors {
+                    print(String(describing: errors))
+                }
                 
             case .failure(let error):
                 print(String(describing: error))
-                
-            case.success(let graphQLResult):
-                let wards = graphQLResult.data?.wards?.edges
-                self?.wards = wards?.compactMap{ $0 } ?? [ ]
-                
-                 DispatchQueue.main.async {
-                    self?.delegate?.didFetchWards()
-                 }
             }
         }
     }
@@ -89,5 +114,25 @@ extension WardsListViewModel: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ward = wards[indexPath.row]
         delegate?.didSelectWard(ward)
+    }
+}
+
+//MARK: - ScrollView Delegate & Pagination
+
+extension WardsListViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        guard !cellViewModels.isEmpty else { return }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { [weak self] t in
+            let offset = scrollView.contentOffset.y
+            let totalContentHeight = scrollView.contentSize.height
+            let totalScrollViewFixedHeight = scrollView.frame.size.height
+            
+            if offset >= (totalContentHeight - totalScrollViewFixedHeight - 100) {
+                self?.fetchWardsIfExist()
+            }
+            t.invalidate()
+        }
     }
 }
