@@ -35,6 +35,8 @@ final class WardsListViewModel: NSObject {
         }
     }
     
+    private var isLoadingWards = false
+    
     private var cellViewModels: [WardCellViewModel] = []
     
     private var currentPageInfo: ModelTypes.PageInfo?
@@ -46,7 +48,9 @@ final class WardsListViewModel: NSObject {
             return
         }
         
-        guard currentPageInfo.hasNextPage else {
+        guard currentPageInfo.hasNextPage,
+              !isLoadingWards
+        else {
             return
         }
         
@@ -54,6 +58,8 @@ final class WardsListViewModel: NSObject {
     }
     
     private func fetchWards(from cursor: String?) {
+        isLoadingWards = true
+        
         PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: cursor ?? nil)) { [weak self] result in
             // guard let strongSelf = self else { return }
             
@@ -62,6 +68,8 @@ final class WardsListViewModel: NSObject {
             switch result {
                 
             case.success(let graphQLResult):
+                self?.isLoadingWards = false
+                
                 if let wards = graphQLResult.data?.wards {
                     self?.currentPageInfo = wards.pageInfo
                     self?.wards.append(contentsOf: wards.edges?.compactMap{ $0 } ?? [])
@@ -76,6 +84,7 @@ final class WardsListViewModel: NSObject {
                 }
                 
             case .failure(let error):
+                self?.isLoadingWards = false
                 print(String(describing: error))
             }
         }
@@ -122,7 +131,9 @@ extension WardsListViewModel: UICollectionViewDelegate, UICollectionViewDataSour
 extension WardsListViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        guard !cellViewModels.isEmpty else { return }
+        guard !cellViewModels.isEmpty,
+              !isLoadingWards
+        else { return }
         
         Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { [weak self] t in
             let offset = scrollView.contentOffset.y

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class WardViewCell: UICollectionViewCell {
     static let cellIdentifier = "WardViewCell"
@@ -18,8 +19,7 @@ final class WardViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        imageView.showLoading(style: .large, color: .darkGray)
+    
         return imageView
     }()
     
@@ -92,12 +92,30 @@ final class WardViewCell: UICollectionViewCell {
         // Image
         viewModel.fetchImage { [weak self] result in
             switch result {
-            case .success(let data):
+            case .success(let url):
                 DispatchQueue.main.async {
-                    let image = UIImage(data: data)?
-                        .downsampleImage(for: self?.imageView.bounds.size ?? CGSize())
-                    self?.imageView.image = image
-                    self?.imageView.stopLoading()
+                    
+                    let processor = DownsamplingImageProcessor(size: self?.imageView.bounds.size ?? CGSize())
+                    |> RoundCornerImageProcessor(cornerRadius: 20)
+                    self?.imageView.kf.indicatorType = .activity
+                    self?.imageView.kf.setImage(
+                        with: url,
+                        placeholder: UIImage(named: "placeholderImage"),
+                        options: [
+                            .processor(processor),
+                            .scaleFactor(UIScreen.main.scale),
+                            .transition(.fade(1)),
+                            .cacheOriginalImage
+                        ])
+                    {
+                        result in
+                        switch result {
+                        case .success(let value):
+                            print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                        case .failure(let error):
+                            print("Job failed: \(error.localizedDescription)")
+                        }
+                    }
                 }
             case .failure(let error):
                 print(String(describing: error))

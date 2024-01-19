@@ -21,13 +21,13 @@ class WardCellViewModel {
     
     //MARK: - Network
     
-    public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
+    public func fetchImage(completion: @escaping (Result<URL, Error>) -> Void) {
         guard let url = wardImageUrl else {
             completion(.failure(URLError(.badURL)))
             return
         }
         
-        ImageManager.shared.downloadImage(url, completion: completion)
+        completion(.success(url))
     }
 }
 

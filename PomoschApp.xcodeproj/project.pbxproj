@@ -26,9 +26,7 @@
 		966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3522B59781400B337E9 /* WardsListViewModel.swift */; };
 		966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3542B5979FC00B337E9 /* WardViewCell.swift */; };
 		966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3562B5985C600B337E9 /* WardCellViewModel.swift */; };
-		966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3592B5988F000B337E9 /* ImageManager.swift */; };
-		966DC35E2B59A3C000B337E9 /* UIImage+Downsample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */; };
-		966DC3622B59BA4800B337E9 /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DC3612B59BA4800B337E9 /* UIView+Loading.swift */; };
+		96FEC0742B5AEEB400923425 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 96FEC0732B5AEEB400923425 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +51,6 @@
 		966DC3522B59781400B337E9 /* WardsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardsListViewModel.swift; sourceTree = "<group>"; };
 		966DC3542B5979FC00B337E9 /* WardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardViewCell.swift; sourceTree = "<group>"; };
 		966DC3562B5985C600B337E9 /* WardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardCellViewModel.swift; sourceTree = "<group>"; };
-		966DC3592B5988F000B337E9 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Downsample.swift"; sourceTree = "<group>"; };
-		966DC3612B59BA4800B337E9 /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FEC0742B5AEEB400923425 /* Kingfisher in Frameworks */,
 				9651082C2B5933A600572D4B /* Apollo in Frameworks */,
 				966DC3322B5961A500B337E9 /* PomoschAPI in Frameworks */,
 			);
@@ -247,7 +243,6 @@
 		966DC3582B5988DA00B337E9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				966DC3592B5988F000B337E9 /* ImageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -263,8 +258,6 @@
 		966DC35C2B59A3A700B337E9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				966DC35D2B59A3C000B337E9 /* UIImage+Downsample.swift */,
-				966DC3612B59BA4800B337E9 /* UIView+Loading.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -288,6 +281,7 @@
 			packageProductDependencies = (
 				9651082B2B5933A600572D4B /* Apollo */,
 				966DC3312B5961A500B337E9 /* PomoschAPI */,
+				96FEC0732B5AEEB400923425 /* Kingfisher */,
 			);
 			productName = PomoschApp;
 			productReference = 965108132B59318A00572D4B /* PomoschApp.app */;
@@ -319,6 +313,7 @@
 			mainGroup = 9651080A2B59318A00572D4B;
 			packageReferences = (
 				9651082A2B5933A600572D4B /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				96FEC0722B5AEEB400923425 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 965108142B59318A00572D4B /* Products */;
 			projectDirPath = "";
@@ -352,11 +347,8 @@
 				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
 				966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */,
 				966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */,
-				966DC35E2B59A3C000B337E9 /* UIImage+Downsample.swift in Sources */,
 				966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */,
-				966DC35A2B5988F000B337E9 /* ImageManager.swift in Sources */,
 				966DC3572B5985C600B337E9 /* WardCellViewModel.swift in Sources */,
-				966DC3622B59BA4800B337E9 /* UIView+Loading.swift in Sources */,
 				966DC3462B596A3700B337E9 /* ManifestVC.swift in Sources */,
 				965108172B59318A00572D4B /* AppDelegate.swift in Sources */,
 				966DC3432B5969B700B337E9 /* WardDetailsVC.swift in Sources */,
@@ -579,6 +571,14 @@
 				version = 1.7.0;
 			};
 		};
+		96FEC0722B5AEEB400923425 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -590,6 +590,11 @@
 		966DC3312B5961A500B337E9 /* PomoschAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PomoschAPI;
+		};
+		96FEC0732B5AEEB400923425 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96FEC0722B5AEEB400923425 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
