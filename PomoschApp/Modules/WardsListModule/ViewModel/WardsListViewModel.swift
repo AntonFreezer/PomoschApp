@@ -95,7 +95,7 @@ final class WardsListViewModel: NSObject {
 
 extension WardsListViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // Cell
+    //MARK: General
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cellViewModels.count
     }
@@ -123,6 +123,30 @@ extension WardsListViewModel: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ward = wards[indexPath.row]
         delegate?.didSelectWard(ward)
+    }
+    
+    //MARK: Footer
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let footerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: WardsListSectionFooter.identifier,
+            for: indexPath) as? WardsListSectionFooter
+        else {
+            fatalError("Could not dequeue footer view with \(WardsListSectionFooter.identifier)")
+        }
+        
+        footerView.startAnimating()
+        
+        return footerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard let currentPageInfo, currentPageInfo.hasNextPage else {
+            return .zero
+        }
+        
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
 }
 

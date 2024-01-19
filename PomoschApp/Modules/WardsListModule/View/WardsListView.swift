@@ -36,8 +36,8 @@ final class WardsListView: UIView {
         let topInset: CGFloat = 50
         collectionView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
         
-        collectionView.backgroundColor = .clear
         collectionView.register(WardViewCell.self, forCellWithReuseIdentifier: WardViewCell.cellIdentifier)
+        collectionView.register(WardsListSectionFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: WardsListSectionFooter.identifier)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -76,6 +76,7 @@ final class WardsListView: UIView {
     }
     
     private func setupCollectionView() {
+        collectionView.backgroundColor = .clear
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
     }
@@ -86,7 +87,6 @@ final class WardsListView: UIView {
 extension WardsListView: WardsListViewModelDelegate {
     func didFetchWards() {
         collectionView.reloadData()
-        // animation
     }
 
     func didSelectWard(_ ward: ModelTypes.Ward) {
