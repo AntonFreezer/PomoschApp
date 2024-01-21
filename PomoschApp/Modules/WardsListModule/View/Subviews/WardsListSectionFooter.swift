@@ -9,8 +9,11 @@ import Foundation
 import UIKit
 
 final class WardsListSectionFooter: UICollectionReusableView {
+    
+    //MARK: Properties
     static let identifier = "WardListSectionFooter"
     
+    //MARK: UI Components
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
         
@@ -21,6 +24,7 @@ final class WardsListSectionFooter: UICollectionReusableView {
         return spinner
     }()
     
+    //MARK: Lifecycle & Setup
     override init(frame: CGRect) {
         super.init(frame: frame)
         

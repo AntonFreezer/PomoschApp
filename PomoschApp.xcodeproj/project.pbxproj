@@ -17,6 +17,8 @@
 		9619CB8E2B5B37C700E89330 /* wardByIdQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9619CB8D2B5B37C700E89330 /* wardByIdQuery.graphql */; };
 		9619CB902B5D548300E89330 /* WardDetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CB8F2B5D548300E89330 /* WardDetailsSectionHeader.swift */; };
 		9619CB922B5D66F500E89330 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CB912B5D66F500E89330 /* GenericViewController.swift */; };
+		9619CB942B5D821300E89330 /* WardBenefactorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CB932B5D821300E89330 /* WardBenefactorCellViewModel.swift */; };
+		9619CB962B5D906700E89330 /* WardBenefactorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619CB952B5D906700E89330 /* WardBenefactorCollectionViewCell.swift */; };
 		965108172B59318A00572D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108162B59318A00572D4B /* AppDelegate.swift */; };
 		965108192B59318A00572D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965108182B59318A00572D4B /* SceneDelegate.swift */; };
 		965108202B59318B00572D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9651081F2B59318B00572D4B /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		9619CB8D2B5B37C700E89330 /* wardByIdQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = wardByIdQuery.graphql; sourceTree = "<group>"; };
 		9619CB8F2B5D548300E89330 /* WardDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardDetailsSectionHeader.swift; sourceTree = "<group>"; };
 		9619CB912B5D66F500E89330 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		9619CB932B5D821300E89330 /* WardBenefactorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBenefactorCellViewModel.swift; sourceTree = "<group>"; };
+		9619CB952B5D906700E89330 /* WardBenefactorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBenefactorCollectionViewCell.swift; sourceTree = "<group>"; };
 		965108132B59318A00572D4B /* PomoschApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoschApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965108162B59318A00572D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		965108182B59318A00572D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				9619CB862B5B237B00E89330 /* WardInfoCollectionViewCell.swift */,
+				9619CB952B5D906700E89330 /* WardBenefactorCollectionViewCell.swift */,
 				9619CB8F2B5D548300E89330 /* WardDetailsSectionHeader.swift */,
 			);
 			path = Subview;
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9619CB8B2B5B35B400E89330 /* WardInfoCellViewModel.swift */,
+				9619CB932B5D821300E89330 /* WardBenefactorCellViewModel.swift */,
 			);
 			path = SubViewModel;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				966DC33A2B59657700B337E9 /* PomoschGqlService.swift in Sources */,
 				966DC3552B5979FC00B337E9 /* WardViewCell.swift in Sources */,
 				9619CB812B5B1E0100E89330 /* WardDetailsView.swift in Sources */,
+				9619CB942B5D821300E89330 /* WardBenefactorCellViewModel.swift in Sources */,
 				966DC3512B5975C600B337E9 /* ModelTypes.swift in Sources */,
 				966DC3532B59781400B337E9 /* WardsListViewModel.swift in Sources */,
 				9619CB922B5D66F500E89330 /* GenericViewController.swift in Sources */,
@@ -432,6 +439,7 @@
 				966DC33C2B59660300B337E9 /* R.swift in Sources */,
 				9619CB872B5B237B00E89330 /* WardInfoCollectionViewCell.swift in Sources */,
 				965108192B59318A00572D4B /* SceneDelegate.swift in Sources */,
+				9619CB962B5D906700E89330 /* WardBenefactorCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,18 +8,20 @@
 import Foundation
 
 class WardCellViewModel {
-    //MARK: - Properties
+    
+    //MARK: Properties
+    
     let wardDisplayName: String
     let wardImageUrl: URL?
     
-    //MARK: - Lifecycle
+    //MARK: Lifecycle & Setup
     
     init(wardDisplayName: String, wardImageUrl: URL?) {
         self.wardDisplayName = wardDisplayName
         self.wardImageUrl = wardImageUrl
     }
     
-    //MARK: - Network
+    //MARK: Network
     
     public func fetchImage(completion: @escaping (Result<URL, Error>) -> Void) {
         guard let url = wardImageUrl else {

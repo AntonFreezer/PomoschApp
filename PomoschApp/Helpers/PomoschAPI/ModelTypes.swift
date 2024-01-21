@@ -17,5 +17,6 @@ struct ModelTypes {
     //MARK: WardDetails Module
     struct WardDetailsModule {
         typealias Ward = WardByIdQuery.Data.WardById
+        typealias Benefactor  = Ward.Supporters.Node
     }
 }

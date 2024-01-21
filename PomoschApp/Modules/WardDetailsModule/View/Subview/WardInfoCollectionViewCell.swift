@@ -9,12 +9,10 @@ import UIKit
 
 final class WardInfoCollectionViewCell: UICollectionViewCell {
 
-    //MARK: - Properties
-
+    //MARK: Properties
     static let cellIdentifier = "WardInfoCollectionViewCell"
 
-    //MARK: - UI Components
-
+    //MARK: UI Components
     private var cityLabel: DualLabelView = {
         let label = DualLabelView(frame: .zero)
 
@@ -61,8 +59,7 @@ final class WardInfoCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
 
-    //MARK: - Lifecycle & Setup
-
+    //MARK: Lifecycle & Setup
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -97,19 +94,20 @@ final class WardInfoCollectionViewCell: UICollectionViewCell {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
         ])
     }
-
-    //MARK: - ViewModel
-
-    public func configure(with viewModel: WardInfoCellViewModel) {
-        cityLabel.trailingText = viewModel.city
-        oneTimeNeeds.trailingText = viewModel.oneTimeNeeds
-        regularNeeds.trailingText = viewModel.regularNeeds
-    }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         cityLabel.trailingText = nil
         oneTimeNeeds.trailingText = nil
         regularNeeds.trailingText = nil
     }
+
+    //MARK: ViewModel
+    public func configure(with viewModel: WardInfoCellViewModel) {
+        cityLabel.trailingText = viewModel.city
+        oneTimeNeeds.trailingText = viewModel.oneTimeNeeds
+        regularNeeds.trailingText = viewModel.regularNeeds
+    }
+
+    
 }

@@ -19,12 +19,12 @@ class ImageManager {
         DispatchQueue.main.async {
             if let imageView {
                 let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
-                |> RoundCornerImageProcessor(cornerRadius: 20)
+                |> RoundCornerImageProcessor(cornerRadius: CGFloat(cornerRadius))
                 
                 imageView.kf.indicatorType = .activity
                 imageView.kf.setImage(
                     with: url,
-                    placeholder: UIImage(named: "placeholderImage"),
+                    placeholder: UIImage(named: "DefaultImagePlaceholder"),
                     options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),

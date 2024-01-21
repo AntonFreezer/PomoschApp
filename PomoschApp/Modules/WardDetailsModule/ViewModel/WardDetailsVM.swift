@@ -12,7 +12,6 @@ final class WardDetailsVM {
     //MARK: Properties
     private let wardId: ID
     private var ward: ModelTypes.WardDetailsModule.Ward?
-    
     public var onWardSetup: (() -> Void)?
     
     public var wardName: String {
@@ -29,6 +28,7 @@ final class WardDetailsVM {
     
     enum SectionType {
         case info(viewModel: WardInfoCellViewModel)
+        case benefactors(viewModels: [WardBenefactorCellViewModel])
     }
     
     public var sections: [SectionType] = []
@@ -44,10 +44,12 @@ final class WardDetailsVM {
         }
     }
 
-    
     private func setupSections() {
         sections = [
             .info(viewModel: .init(ward: ward)),
+            .benefactors(viewModels: ward?.supporters?.nodes?.compactMap {
+                WardBenefactorCellViewModel(benefactor: $0)
+            } ?? [])
         ]
     }
     
@@ -103,23 +105,6 @@ final class WardDetailsVM {
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
                 heightDimension: .absolute(124)),
-            subitems: [item, item]
-        )
-        
-        let header = createHeader()
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header]
-        return section
-    }
-    
-    public func createOriginSectionLayout() -> NSCollectionLayoutSection {
-        let item = createDefaultLayoutItem()
-        
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(100)),
             subitems: [item]
         )
         
@@ -128,10 +113,9 @@ final class WardDetailsVM {
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header]
         return section
-        
     }
     
-    public func createEpisodeSectionLayout()  -> NSCollectionLayoutSection {
+    public func createBenefactorSectionLayout()  -> NSCollectionLayoutSection {
         let item = createDefaultLayoutItem()
         item.contentInsets = NSDirectionalEdgeInsets(
             top: 10, leading: 0.5, bottom: 0, trailing: 0.5)
@@ -145,7 +129,6 @@ final class WardDetailsVM {
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header]
-        section.orthogonalScrollingBehavior = .none
         return section
     }
 }

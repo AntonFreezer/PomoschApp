@@ -9,9 +9,7 @@ import UIKit
 
 class WardsListVC: GenericViewController<WardsListView> {
     
-    //MARK: - Properties
-    
-    //MARK: - Lifecycle & Setup
+    //MARK: Lifecycle & Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()

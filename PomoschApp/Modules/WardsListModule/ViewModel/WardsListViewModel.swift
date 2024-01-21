@@ -42,6 +42,7 @@ final class WardsListViewModel: NSObject {
     private var currentPageInfo: ModelTypes.WardListModule.PageInfo?
     
     //MARK: Network
+    
     public func fetchWardsIfExist() {
         guard let currentPageInfo else {
             self.fetchWards(from: nil)
@@ -86,7 +87,7 @@ final class WardsListViewModel: NSObject {
     }
 }
 
-//MARK: - CollectionView DataSource&Delegate
+//MARK: - CollectionView DataSource & Delegate
 
 extension WardsListViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

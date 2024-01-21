@@ -16,12 +16,12 @@ protocol WardsListViewDelegate: AnyObject {
 }
 
 final class WardsListView: UIView {
-    //MARK: - Properties
-    
+    //MARK: Properties
+
     public weak var delegate: WardsListViewDelegate?
     private let viewModel = WardsListViewModel()
     
-    //MARK: - UI Components
+    //MARK: UI Components
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -44,7 +44,7 @@ final class WardsListView: UIView {
         return collectionView
     }()
     
-    //MARK: - Lifecycle & Setup
+    //MARK: Lifecycle & Setup
     
     init() {
         super.init(frame: .zero)
@@ -82,7 +82,7 @@ final class WardsListView: UIView {
     }
 }
 
-    //MARK: - WardsListViewModel Delegate
+//MARK: - WardsListViewModel Delegate
     
 extension WardsListView: WardsListViewModelDelegate {
     func didFetchWards() {

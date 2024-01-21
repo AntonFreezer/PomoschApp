@@ -144,8 +144,13 @@ class WardDetailsView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
         
+        // cells
         collectionView.register(WardInfoCollectionViewCell.self, forCellWithReuseIdentifier: WardInfoCollectionViewCell.cellIdentifier)
+        collectionView.register(WardBenefactorCollectionViewCell.self, forCellWithReuseIdentifier: WardBenefactorCollectionViewCell.cellIdentifier)
+        
+        // supplementary
         collectionView.register(WardDetailsSectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: WardDetailsSectionHeader.identifier)
         
         return collectionView
@@ -157,7 +162,8 @@ class WardDetailsView: UIView {
         switch sectionTypes![sectionIndex] {
         case .info:
             return viewModel?.createInfoSectionLayout()
-        
+        case .benefactors:
+            return viewModel?.createBenefactorSectionLayout()
         }
     }
 }

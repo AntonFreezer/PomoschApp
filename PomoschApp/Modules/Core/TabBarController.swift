@@ -8,18 +8,22 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpTabs()
-    }
+    
+    //MARK: Navigation Appearance
     
     private class navController: UINavigationController {
         override var childForStatusBarStyle: UIViewController? {
             visibleViewController
         }
     }
-
+    
+    //MARK: Lifecycle & Setup
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpTabs()
+    }
+    
     func setUpTabs() {
         let wardsListVC = WardsListVC()
         let manifestVC = ManifestVC()

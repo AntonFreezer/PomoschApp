@@ -19,7 +19,7 @@ final class WardViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         return imageView
     }()
     
@@ -83,9 +83,10 @@ final class WardViewCell: UICollectionViewCell {
         self.imageView.image = nil
         self.displayNameLabel.text = nil
     }
-    
-    //MARK: - CharacterCollectionViewCell View Model
-    
+}
+//MARK: - WardViewCell ViewModel
+
+extension WardViewCell {
     public func configure(with viewModel: WardCellViewModel) {
         // Text
         displayNameLabel.text = viewModel.wardDisplayName
@@ -93,15 +94,14 @@ final class WardViewCell: UICollectionViewCell {
         viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let url):
-                ImageManager.shared.setImage(at: url, for: self?.imageView)
+                ImageManager.shared.setImage(at: url, for: self?.imageView, cornerRadius: 16)
                 
             case .failure(let error):
                 print(String(describing: error))
                 break
             }
         }
-        
-        
     }
+    
 }
 

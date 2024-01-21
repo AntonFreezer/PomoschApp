@@ -9,7 +9,7 @@ import UIKit
 
 final class WardDetailsVC: GenericViewController<WardDetailsView> {
     
-    //MARK: - Properties
+    //MARK: Properties
     
     private let viewModel: WardDetailsVM
     
@@ -17,7 +17,7 @@ final class WardDetailsVC: GenericViewController<WardDetailsView> {
         return .lightContent
     }
     
-    //MARK: - Lifecycle & Setup
+    //MARK: Lifecycle & Setup
     
     init(viewModel: WardDetailsVM) {
         self.viewModel = viewModel
@@ -53,11 +53,11 @@ final class WardDetailsVC: GenericViewController<WardDetailsView> {
     }
 }
 
-//MARK: - CollectionView
+//MARK: - CollectionView DataSource & Delegate
 
 extension WardDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // Section
+    //MARK: Section
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.sections.count
@@ -69,10 +69,12 @@ extension WardDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch sectionType {
         case .info:
             return 1
+        case .benefactors(let viewModels):
+            return viewModels.count
         }
     }
     
-    // Cell
+    //MARK: Cell
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let sectionType = viewModel.sections[indexPath.section]
@@ -87,10 +89,24 @@ extension WardDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.configure(with: viewModel)
             return cell
             
+        case .benefactors(let viewModels):
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: WardBenefactorCollectionViewCell.cellIdentifier,
+                for: indexPath) as? WardBenefactorCollectionViewCell else {
+                fatalError()
+            }
+            
+            let viewModel = viewModels[indexPath.item]
+            
+            cell.configure(with: viewModel)
+            return cell
+            
         }
+        
+        
     }
     
-    // Header
+    //MARK: Header
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
@@ -107,7 +123,9 @@ extension WardDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case .info:
             headerView.titleLabel.text = "Info"
             return headerView
-        
+        case .benefactors:
+            headerView.titleLabel.text = "Who supports \(viewModel.wardName)"
+            return headerView
         }
     }
 
