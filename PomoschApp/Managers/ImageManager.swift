@@ -15,7 +15,7 @@ class ImageManager {
     
     public func setImage(at url: URL,
                          for imageView: UIImageView?,
-                         with cornerRadius: Int = 20) {
+                         cornerRadius: Int = 20) {
         DispatchQueue.main.async {
             if let imageView {
                 let processor = DownsamplingImageProcessor(size: imageView.bounds.size)

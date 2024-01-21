@@ -11,7 +11,7 @@ import PomoschAPI
 
 protocol WardsListViewModelDelegate: AnyObject {
     func didFetchWards()
-    func didSelectWard(_ ward: ModelTypes.Ward)
+    func didSelectWard(_ ward: ModelTypes.WardListModule.Ward)
 }
 
 final class WardsListViewModel: NSObject {
@@ -20,7 +20,7 @@ final class WardsListViewModel: NSObject {
     
     public weak var delegate: WardsListViewModelDelegate?
     
-    private var wards: [ModelTypes.Ward] = [] {
+    private var wards: [ModelTypes.WardListModule.Ward] = [] {
         didSet {
             for ward in wards {
                 let viewModel = WardCellViewModel(
@@ -39,7 +39,7 @@ final class WardsListViewModel: NSObject {
     
     private var cellViewModels: [WardCellViewModel] = []
     
-    private var currentPageInfo: ModelTypes.PageInfo?
+    private var currentPageInfo: ModelTypes.WardListModule.PageInfo?
     
     //MARK: Network
     public func fetchWardsIfExist() {
@@ -60,22 +60,21 @@ final class WardsListViewModel: NSObject {
     private func fetchWards(from cursor: String?) {
         isLoadingWards = true
         
-        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursorAfter: cursor ?? nil)) { [weak self] result in
-            // guard let strongSelf = self else { return }
+        PomoschGqlService.shared.apollo.fetch(query: WardsPaginatedQuery(cursor: cursor ?? nil)) { result in
             
-            self?.currentPageInfo = nil
+            self.currentPageInfo = nil
             
             switch result {
                 
             case.success(let graphQLResult):
-                self?.isLoadingWards = false
+                self.isLoadingWards = false
                 
                 if let wards = graphQLResult.data?.wards {
-                    self?.currentPageInfo = wards.pageInfo
-                    self?.wards.append(contentsOf: wards.edges?.compactMap{ $0 } ?? [])
+                    self.currentPageInfo = wards.pageInfo
+                    self.wards.append(contentsOf: wards.edges?.compactMap{ $0 } ?? [])
                     
                     DispatchQueue.main.async {
-                        self?.delegate?.didFetchWards()
+                        self.delegate?.didFetchWards()
                     }
                 }
                 
@@ -84,7 +83,7 @@ final class WardsListViewModel: NSObject {
                 }
                 
             case .failure(let error):
-                self?.isLoadingWards = false
+                self.isLoadingWards = false
                 print(String(describing: error))
             }
         }

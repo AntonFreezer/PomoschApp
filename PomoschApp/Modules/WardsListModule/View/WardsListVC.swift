@@ -27,14 +27,14 @@ class WardsListVC: GenericViewController<WardsListView> {
     
 }
 
-//MARK: - CharacterListView Delegate
+//MARK: - WardsListView Delegate
 
 extension WardsListVC: WardsListViewDelegate {
-    func wardsListView(_ wardsListView: WardsListView, didSelectWard ward: ModelTypes.Ward) {
-        //
-        //        let viewModel = WardDetailsViewModel(ward: ward)
-        //        let wardDetailsVC = WardDetailsVC(viewModel: viewModel)
-        //
-        // navigationController?.pushViewController(wardDetailsVC, animated: true)
+    func wardsListView(_ wardsListView: WardsListView, didSelectWard ward: ModelTypes.WardListModule.Ward) {
+        
+        let viewModel = WardDetailsVM(wardId: ward.node.id)
+        let wardDetailsVC = WardDetailsVC(viewModel: viewModel)
+        
+        navigationController?.pushViewController(wardDetailsVC, animated: true)
     }
 }

@@ -8,6 +8,14 @@
 import PomoschAPI
 
 struct ModelTypes {
-    typealias Ward = WardsPaginatedQuery.Data.Wards.Edge
-    typealias PageInfo = WardsPaginatedQuery.Data.Wards.PageInfo
+    //MARK: WardsList Module
+    struct WardListModule {
+        typealias Ward = WardsPaginatedQuery.Data.Wards.Edge
+        typealias PageInfo = WardsPaginatedQuery.Data.Wards.PageInfo
+    }
+    
+    //MARK: WardDetails Module
+    struct WardDetailsModule {
+        typealias Ward = WardByIdQuery.Data.WardById
+    }
 }

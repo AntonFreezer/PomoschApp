@@ -11,7 +11,7 @@ import PomoschAPI
 protocol WardsListViewDelegate: AnyObject {
     func wardsListView(
         _ characterListView: WardsListView,
-        didSelectWard ward: ModelTypes.Ward
+        didSelectWard ward: ModelTypes.WardListModule.Ward
     )
 }
 
@@ -89,7 +89,7 @@ extension WardsListView: WardsListViewModelDelegate {
         collectionView.reloadData()
     }
 
-    func didSelectWard(_ ward: ModelTypes.Ward) {
+    func didSelectWard(_ ward: ModelTypes.WardListModule.Ward) {
         delegate?.wardsListView(self, didSelectWard: ward)
     }
 }

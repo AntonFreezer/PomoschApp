@@ -1,5 +1,14 @@
-query WardsPaginatedQuery($cursorAfter: String) {
-    wards(after: $cursorAfter, first: 20, where: { published: { eq: true } }) {
+query WardsPaginatedQuery($cursor: String) {
+    wards(
+        after: $cursor
+        first: 20
+        where: { published: { eq: true } }
+        order: {
+            publicInformation: {
+                name: { fullName: ASC }
+            }
+        }
+    ) {
         edges {
             node {
                 id
