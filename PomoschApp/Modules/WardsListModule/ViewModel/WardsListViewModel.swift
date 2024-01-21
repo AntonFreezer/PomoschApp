@@ -41,7 +41,10 @@ final class WardsListViewModel: NSObject {
     
     private var currentPageInfo: ModelTypes.WardListModule.PageInfo?
     
-    //MARK: Network
+}
+//MARK: - Network
+
+extension WardsListViewModel {
     
     public func fetchWardsIfExist() {
         guard let currentPageInfo else {

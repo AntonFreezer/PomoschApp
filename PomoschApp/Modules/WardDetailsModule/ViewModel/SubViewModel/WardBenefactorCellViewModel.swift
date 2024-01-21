@@ -10,6 +10,7 @@ import UIKit
 final class WardBenefactorCellViewModel {
     
     //MARK: Properties
+    
     private let benefactor: ModelTypes.WardDetailsModule.Benefactor?
     
     let id: String
@@ -18,6 +19,7 @@ final class WardBenefactorCellViewModel {
     let benefactorImageUrl: String?
     
     //MARK: Lifecycle & Setup
+    
     init(benefactor: ModelTypes.WardDetailsModule.Benefactor?) {
         self.benefactor = benefactor
         
@@ -28,6 +30,7 @@ final class WardBenefactorCellViewModel {
     }
     
     //MARK: Network
+    
     public func fetchImage(completion: @escaping (Result<URL, Error>) -> Void) {
         guard let url = benefactorImageUrl, let convertedURL = URL(string: url) else {
             return

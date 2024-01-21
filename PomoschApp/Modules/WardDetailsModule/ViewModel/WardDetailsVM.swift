@@ -9,7 +9,9 @@ import UIKit
 import PomoschAPI
 
 final class WardDetailsVM {
+    
     //MARK: Properties
+    
     private let wardId: ID
     private var ward: ModelTypes.WardDetailsModule.Ward?
     public var onWardSetup: (() -> Void)?
@@ -33,7 +35,7 @@ final class WardDetailsVM {
     
     public var sections: [SectionType] = []
     
-    //MARK: - Lifecycle & Setup
+    //MARK: Lifecycle & Setup
     
     init(wardId: ID) {
         self.wardId = wardId
@@ -43,7 +45,7 @@ final class WardDetailsVM {
             self?.onWardSetup?()
         }
     }
-
+    
     private func setupSections() {
         sections = [
             .info(viewModel: .init(ward: ward)),
@@ -53,7 +55,12 @@ final class WardDetailsVM {
         ]
     }
     
-    //MARK: - Network
+}
+    
+//MARK: - Network
+
+extension WardDetailsVM {
+    
     private func fetchWard(by id: ID, completion: @escaping () -> Void) {
         
         PomoschGqlService.shared.apollo.fetch(query: WardByIdQuery(id: id)) { result in
@@ -66,7 +73,7 @@ final class WardDetailsVM {
             }
             
             completion()
-        } 
+        }
     }
     
     public func fetchImage(completion: @escaping (Result<URL,Error>) -> Void) {
@@ -77,8 +84,11 @@ final class WardDetailsVM {
         
         completion(.success(imageURL))
     }
+}
     
-    //MARK: - CollectionView Layouts
+//MARK: - CollectionView Layouts
+    
+extension WardDetailsVM {
     
     private func createDefaultLayoutItem() -> NSCollectionLayoutItem {
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(

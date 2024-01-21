@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 class WardDetailsView: UIView {
-    //MARK: - Properties
+    
+    //MARK: Properties
     
     private var viewModel: WardDetailsVM?
     
-    //MARK: - UI Components
+    //MARK: UI Components
     
     private let wardImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -50,7 +51,7 @@ class WardDetailsView: UIView {
     
     public var collectionView: UICollectionView?
     
-    //MARK: - Lifecycle & Setup
+    //MARK: Lifecycle & Setup
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,7 +73,7 @@ class WardDetailsView: UIView {
     
     private func setupView() {
         backgroundColor = .white
-
+        
         self.collectionView = createCollectionView()
         
         addSubview(wardImageView)
@@ -103,11 +104,11 @@ class WardDetailsView: UIView {
             wardNameLabel.topAnchor.constraint(equalTo: wardImageView.bottomAnchor, constant: 20),
             wardNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             wardNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-
+            
             wardStatusLabel.topAnchor.constraint(equalTo: wardNameLabel.bottomAnchor, constant: 5),
             wardStatusLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             wardStatusLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-
+            
             collectionView.topAnchor.constraint(equalTo: wardStatusLabel.bottomAnchor, constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 25),
             collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -25),
@@ -132,10 +133,13 @@ class WardDetailsView: UIView {
             }
         }
     }
+}
+
+//MARK: - CollectionView
+
+private extension WardDetailsView {
     
-    //MARK: - CollectionView
-    
-    private func createCollectionView() -> UICollectionView {
+    func createCollectionView() -> UICollectionView {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             return self?.createSection(for: sectionIndex)
         }
@@ -156,7 +160,7 @@ class WardDetailsView: UIView {
         return collectionView
     }
     
-    private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection? {
+    func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection? {
         let sectionTypes = viewModel?.sections
         
         switch sectionTypes![sectionIndex] {

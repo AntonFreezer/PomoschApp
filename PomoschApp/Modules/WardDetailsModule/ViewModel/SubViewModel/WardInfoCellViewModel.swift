@@ -9,11 +9,15 @@ import UIKit
 
 final class WardInfoCellViewModel {
     
+    //MARK: Properties
+    
     private let ward: ModelTypes.WardDetailsModule.Ward?
     
     let city: String
     let oneTimeNeeds: String
     let regularNeeds: String
+    
+    //MARK: Lifecycle & Setup
     
     init(ward: ModelTypes.WardDetailsModule.Ward?) {
         self.ward = ward

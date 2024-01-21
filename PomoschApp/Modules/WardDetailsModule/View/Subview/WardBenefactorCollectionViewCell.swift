@@ -10,9 +10,11 @@ import UIKit
 final class WardBenefactorCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
+    
     static let cellIdentifier = "WardBenefactorCollectionViewCell"
     
     //MARK: UI Components
+    
     private var photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         
@@ -48,6 +50,7 @@ final class WardBenefactorCollectionViewCell: UICollectionViewCell {
     }()
     
     //MARK: Lifecycle & Setup
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -95,7 +98,12 @@ final class WardBenefactorCollectionViewCell: UICollectionViewCell {
         amountSpentLabel.trailingText = ""
     }
     
-    //MARK: ViewModel
+}
+
+//MARK: - ViewModel
+
+extension WardBenefactorCollectionViewCell {
+    
     public func configure(with viewModel: WardBenefactorCellViewModel) {
         // text
         displayNameLabel.text = viewModel.displayName

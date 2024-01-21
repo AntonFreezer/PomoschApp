@@ -84,7 +84,7 @@ final class WardViewCell: UICollectionViewCell {
         self.displayNameLabel.text = nil
     }
 }
-//MARK: - WardViewCell ViewModel
+//MARK: - ViewModel
 
 extension WardViewCell {
     public func configure(with viewModel: WardCellViewModel) {

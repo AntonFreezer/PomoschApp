@@ -8,7 +8,12 @@
 import UIKit
 
 final class WardDetailsSectionHeader: UICollectionReusableView {
+    
+    //MARK: Properties
+    
     static let identifier = "WardDetailsSectionHeader"
+    
+    //MARK: UI Components
     
     public let titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -20,6 +25,8 @@ final class WardDetailsSectionHeader: UICollectionReusableView {
         
         return label
     }()
+    
+    //MARK: Lifecycle & Setup
     
     override init(frame: CGRect) {
         super.init(frame: frame)
