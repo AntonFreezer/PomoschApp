@@ -55,6 +55,7 @@
 		9619CB932B5D821300E89330 /* WardBenefactorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBenefactorCellViewModel.swift; sourceTree = "<group>"; };
 		9619CB952B5D906700E89330 /* WardBenefactorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBenefactorCollectionViewCell.swift; sourceTree = "<group>"; };
 		9619CB972B5DA8D100E89330 /* ManifestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestView.swift; sourceTree = "<group>"; };
+		9649E1CF2B5DE211009BD5CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		965108132B59318A00572D4B /* PomoschApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoschApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965108162B59318A00572D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		965108182B59318A00572D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		9651080A2B59318A00572D4B = {
 			isa = PBXGroup;
 			children = (
+				9649E1CF2B5DE211009BD5CD /* README.md */,
 				966DC32E2B59614300B337E9 /* Packages */,
 				965108152B59318A00572D4B /* PomoschApp */,
 				965108142B59318A00572D4B /* Products */,

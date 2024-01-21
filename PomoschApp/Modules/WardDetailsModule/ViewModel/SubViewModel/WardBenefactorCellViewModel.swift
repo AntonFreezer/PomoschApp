@@ -14,6 +14,7 @@ final class WardBenefactorCellViewModel {
     private let benefactor: ModelTypes.WardDetailsModule.Benefactor?
     
     let id: String
+    let hideProfile: Bool
     let amountSpent: String
     let displayName: String
     let benefactorImageUrl: String?
@@ -24,6 +25,7 @@ final class WardBenefactorCellViewModel {
         self.benefactor = benefactor
         
         self.id = benefactor?.benefactor.id ?? ""
+        self.hideProfile = benefactor?.benefactor.hideProfile ?? false
         self.amountSpent = String(benefactor?.amountSpent ?? 0)
         self.displayName = benefactor?.benefactor.displayName ?? ""
         self.benefactorImageUrl = benefactor?.benefactor.photo?.url

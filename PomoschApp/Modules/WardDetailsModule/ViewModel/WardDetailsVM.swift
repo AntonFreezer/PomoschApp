@@ -44,6 +44,7 @@ final class WardDetailsVM {
             self?.setupSections()
             self?.onWardSetup?()
         }
+        
     }
     
     private func setupSections() {
@@ -51,7 +52,7 @@ final class WardDetailsVM {
             .info(viewModel: .init(ward: ward)),
             .benefactors(viewModels: ward?.supporters?.nodes?.compactMap {
                 WardBenefactorCellViewModel(benefactor: $0)
-            } ?? [])
+            }.filter { !$0.hideProfile } ?? [])
         ]
     }
     
