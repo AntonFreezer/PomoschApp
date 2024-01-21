@@ -158,7 +158,7 @@ extension WardsListViewModel: UIScrollViewDelegate {
               !isLoadingWards
         else { return }
         
-        Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { [weak self] t in
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) { [weak self] t in
             let offset = scrollView.contentOffset.y
             let totalContentHeight = scrollView.contentSize.height
             let totalScrollViewFixedHeight = scrollView.frame.size.height
