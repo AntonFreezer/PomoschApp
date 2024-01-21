@@ -106,6 +106,7 @@ final class WardInfoCollectionViewCell: UICollectionViewCell {
     }
     
 }
+
 //MARK: - ViewModel
 
 extension WardInfoCollectionViewCell {

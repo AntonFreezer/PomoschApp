@@ -29,7 +29,10 @@ final class WardBenefactorCellViewModel {
         self.benefactorImageUrl = benefactor?.benefactor.photo?.url
     }
     
-    //MARK: Network
+}
+//MARK: - Network
+
+extension WardBenefactorCellViewModel {
     
     public func fetchImage(completion: @escaping (Result<URL, Error>) -> Void) {
         guard let url = benefactorImageUrl, let convertedURL = URL(string: url) else {
@@ -38,4 +41,5 @@ final class WardBenefactorCellViewModel {
         
         completion(.success(convertedURL))
     }
+    
 }

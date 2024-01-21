@@ -50,7 +50,7 @@ final class WardViewCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = .systemGray4
         contentView.addSubview(imageView)
         contentView.addSubview(displayNameLabel)
     }

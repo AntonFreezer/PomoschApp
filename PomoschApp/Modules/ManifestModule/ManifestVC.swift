@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ManifestVC: UIViewController {
+class ManifestVC: GenericViewController<ManifestView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .gray
-        print("c")
+        view.backgroundColor = .white
 
     }
+    
 }
