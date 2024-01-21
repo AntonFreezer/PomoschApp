@@ -64,7 +64,7 @@ final class WardDetailsVM {
             }
             
             completion()
-        }
+        } 
     }
     
     public func fetchImage(completion: @escaping (Result<URL,Error>) -> Void) {

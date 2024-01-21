@@ -65,17 +65,13 @@ final class WardsListViewModel: NSObject {
             self.currentPageInfo = nil
             
             switch result {
-                
             case.success(let graphQLResult):
                 self.isLoadingWards = false
                 
                 if let wards = graphQLResult.data?.wards {
                     self.currentPageInfo = wards.pageInfo
                     self.wards.append(contentsOf: wards.edges?.compactMap{ $0 } ?? [])
-                    
-                    DispatchQueue.main.async {
-                        self.delegate?.didFetchWards()
-                    }
+                    self.delegate?.didFetchWards()
                 }
                 
                 if let errors = graphQLResult.errors {

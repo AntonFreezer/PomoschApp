@@ -58,7 +58,6 @@ class WardDetailsView: UIView {
     
     init(frame: CGRect, viewModel: WardDetailsVM) {
         self.viewModel = viewModel
-        
         super.init(frame: frame)
         
         setupView()

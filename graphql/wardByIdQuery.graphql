@@ -1,0 +1,38 @@
+query WardByIdQuery($id: ID!) {
+    wardById(id: $id) {
+        immediateHelpRequired
+        publicInformation {
+            city
+            name {
+                displayName
+            }
+            photo {
+                url
+            }
+        }
+        amounts {
+            oneTimeNeeds {
+                collectedAmount
+                totalRequiredAmount
+                count
+            }
+            regularNeeds {
+                count
+                totalRequiredAmount
+            }
+        }
+        supporters(first: 5) {
+            nodes {
+                amountSpent
+                benefactor {
+                    displayName
+                    id
+                    photo {
+                        url
+                    }
+                }
+            }
+        }
+    }
+}
+
